@@ -4,13 +4,8 @@ const l = input.length;
 
 var total = 0;
 
-input.filter( (num) => {
-        return num >0;
-    }
-
-).map( (num) => {
+input.map( (num) => {
     total = total +num;
 } )
 
 console.log(`Mean = ${total/l}`);
-
