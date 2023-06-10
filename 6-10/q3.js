@@ -1,11 +1,30 @@
 const input = [12, 46, 32, 64];
 
-const l = input.length;
+function mean(arr){
+    const l = arr.length;
 
-var total = 0;
+    var total = 0;
 
-input.map( (num) => {
-    total = total +num;
-} )
+    arr.map( (num) => {
+        total = total +num;
+    } )
 
-console.log(`Mean = ${total/l}`);
+    return total/l;
+}
+
+function median(values){
+
+    values.sort(function(a,b){
+        return a-b;
+    });
+
+    var half = Math.floor(values.length / 2);
+
+    if (values.length % 2)
+        return values[half];
+
+    return (values[half - 1] + values[half]) / 2.0;
+}
+console.log(`Mean = ${mean(input)}`);
+console.log(`Median = ${median(input)}`);
+
